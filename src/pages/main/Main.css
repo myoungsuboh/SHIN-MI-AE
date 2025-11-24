@@ -121,7 +121,7 @@ body {
     padding: 30px;
     border-radius: 12px;
     margin-bottom: 40px;
-    margin-top: 40px; /* 헤더와 About 섹션 사이 간격 추가 */
+    margin-top: 40px; 
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
@@ -152,12 +152,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-height: 385px; /* 4?? ?????? ???? + gap */
+    max-height: 385px; 
     overflow-y: auto;
-    padding-right: 10px; /* ?????? ???? */
+    padding-right: 10px; 
 }
 
-/* ?????? ?????? */
 .album-list-vertical::-webkit-scrollbar {
     width: 8px;
 }
@@ -269,11 +268,14 @@ body {
     }
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .profile-main {
-        margin-top: -60px;
+        margin-top: -40px;
         padding: 0 15px;
+    }
+
+    .header-overlay {
+        padding-bottom: 30px;
     }
 
     .discography-layout {
@@ -281,7 +283,7 @@ body {
     }
 
     .singer-name {
-        font-size: 3rem; /* ?º??? ??? ??? */
+        font-size: 3rem; 
     }
 
     .singer-genre {
@@ -289,7 +291,7 @@ body {
     }
 
     .profile-stats {
-        padding: 15px; /* 내부 여백 축소 */
+        padding: 15px; 
     }
 
     .stat-item h3 {
@@ -308,7 +310,7 @@ body {
     }
 
     .singer-name {
-        font-size: 2.2rem; /* ????? ??? ??? */
+        font-size: 2.2rem; 
     }
 
     .singer-genre {
@@ -316,6 +318,14 @@ body {
     }
 
     .stat-item h3 {
-        font-size: 1.5rem; /* 모바일에서 통계 숫자 크기 조절 */
+        font-size: 1.5rem; 
+    }
+    
+    .profile-main {
+        margin-top: -20px;
+    }
+
+    .header-overlay {
+        padding-bottom: 20px;
     }
 }
