@@ -65,7 +65,7 @@ const Main = () => {
         </main>
       </div>
       <main className="profile-main profile-main-continued">
-        <Discography albums={singerData.albums} initialSelectedAlbumSeq={0} />
+        <Discography albums={singerData.albums} />
 
         <ProfileAwards awards={singerData.awards} />
       </main>

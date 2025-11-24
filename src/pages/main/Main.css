@@ -142,114 +142,6 @@ body {
     color: var(--secondary-color);
 }
 
-.discography-layout {
-    display: flex;
-    gap: 30px;
-}
-
-.album-list-vertical {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-height: 385px; 
-    overflow-y: auto;
-    padding-right: 10px; 
-}
-
-.album-list-vertical::-webkit-scrollbar {
-    width: 8px;
-}
-
-.album-list-vertical::-webkit-scrollbar-track {
-    background: #2a2a2a;
-    border-radius: 4px;
-}
-
-.album-list-vertical::-webkit-scrollbar-thumb {
-    background-color: #555;
-    border-radius: 4px;
-}
-
-.album-card-vertical {
-    display: flex;
-    align-items: center;
-    background-color: #2a2a2a;
-    border-radius: 8px;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    border: 2px solid transparent;
-}
-
-.album-card-vertical:hover {
-    background-color: #333;
-    transform: translateX(5px);
-}
-
-.album-card-vertical.active {
-    background-color: #3a3a3a;
-    border-color: var(--accent-color);
-}
-
-.album-cover-small {
-    width: 60px;
-    height: 60px;
-    border-radius: 4px;
-    object-fit: cover;
-    margin-right: 15px;
-}
-
-.album-info-vertical h4 {
-    margin: 0 0 5px 0;
-    color: var(--primary-color);
-    font-size: 1.1rem;
-}
-
-.album-info-vertical p {
-    margin: 0;
-    color: var(--secondary-color);
-    font-size: 0.9rem;
-}
-
-.track-list-details {
-    flex: 1.5;
-    background-color: #2a2a2a;
-    border-radius: 8px;
-    padding: 30px;
-    opacity: 0;
-    transform: translateX(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    min-height: 300px;
-}
-
-.track-list-details.show {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.track-list-details h3 {
-    font-family: 'Playfair Display', serif;
-    color: var(--accent-color);
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 2rem;
-}
-
-.track-list-details ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.track-list-details li {
-    color: var(--secondary-color);
-    padding: 10px 0;
-    border-bottom: 1px solid #333;
-    font-size: 1rem;
-}
-
-
 .profile-footer {
     text-align: center;
     padding: 20px;
@@ -276,10 +168,6 @@ body {
 
     .header-overlay {
         padding-bottom: 30px;
-    }
-
-    .discography-layout {
-        flex-direction: column;
     }
 
     .singer-name {
@@ -328,4 +216,5 @@ body {
     .header-overlay {
         padding-bottom: 20px;
     }
+
 }

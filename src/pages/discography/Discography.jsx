@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import './Discography.css';
 
 const sampleTracks = {
   "Starlight Serenade": ["1. Starlight Prelude", "2. Galactic Tides", "3. Nebula's Embrace", "4. Supernova Heart", "5. Echoes of Infinity"],
@@ -9,52 +10,37 @@ const sampleTracks = {
   "Ethereal Journey": ["1. Ancient Paths", "2. Spirit's Flight", "3. Sacred Grove", "4. Timeless River", "5. Soul's Ascent"]
 };
 
-const Discography = ({ albums, initialSelectedAlbumSeq }) => {
-  const [selectedAlbumSeq, setSelectedAlbumSeq] = useState(initialSelectedAlbumSeq);
+const Discography = ({ albums }) => {
+  const [openAlbumSeq, setOpenAlbumSeq] = useState(null);
 
-  
-  useEffect(() => {
-    setSelectedAlbumSeq(initialSelectedAlbumSeq);
-  }, [initialSelectedAlbumSeq]);
-
-  const currentSelectedAlbum = albums.find(album => album.seq === selectedAlbumSeq);
-  const currentSelectedAlbumTitle = currentSelectedAlbum ? currentSelectedAlbum.title : null;
-
-  const handleAlbumClick = (seq) => {
-    setSelectedAlbumSeq(selectedAlbumSeq === seq ? null : seq);
+  const handleToggle = (albumSeq) => {
+    setOpenAlbumSeq(openAlbumSeq === albumSeq ? null : albumSeq);
   };
 
   return (
     <section className="profile-albums">
       <h2>Discography</h2>
-      <div className="discography-layout">
-        <div className="album-list-vertical">
-          {albums.map(album => (
-            <div
-              key={album.seq} 
-              className={`album-card-vertical ${selectedAlbumSeq === album.seq ? 'active' : ''}`} // selectedAlbumSeq¿Í ºñ±³
-              onClick={() => handleAlbumClick(album.seq)} 
-            >
-              <img src={album.cover} alt={album.title} className="album-cover-small" />
-              <div className="album-info-vertical">
-                <h4>{album.title}</h4>
-                <p>{album.year}</p>
+      <div className="timeline">
+        {albums.map((album, index) => (
+          <div key={album.seq} className="timeline-item">
+            <div className={`timeline-content ${openAlbumSeq === album.seq ? 'active' : ''}`}>
+              <div className="timeline-header" onClick={() => handleToggle(album.seq)}>
+                <img src={album.cover} alt={album.title} className="timeline-album-cover" />
+                <div className="timeline-title-group">
+                  <h3 className="timeline-album-title">{album.title}</h3>
+                  <span className="timeline-album-year">{album.year}</span>
+                </div>
+              </div>
+              <div className="timeline-track-list-container">
+                <ul className="timeline-track-list">
+                  {sampleTracks[album.title]?.map((track, trackIndex) => (
+                    <li key={trackIndex}>{track}</li>
+                  ))}
+                </ul>
               </div>
             </div>
-          ))}
-        </div>
-        <div className={`track-list-details ${currentSelectedAlbumTitle ? 'show' : ''}`}>
-          {currentSelectedAlbumTitle && (
-            <>
-              <h3>{currentSelectedAlbumTitle}</h3>
-              <ul>
-                {sampleTracks[currentSelectedAlbumTitle]?.map((track, index) => (
-                  <li key={index}>{track}</li>
-                ))}
-              </ul>
-            </>
-          )}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );
