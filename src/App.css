@@ -1,0 +1,7 @@
+/* Keep the body styles from SingerProfile.css in mind. This file will style the App's own layout. */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.App {
+  text-align: center;
+  overflow-x: hidden;
+}

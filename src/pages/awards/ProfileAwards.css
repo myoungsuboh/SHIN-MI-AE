@@ -1,0 +1,67 @@
+.profile-awards {
+  background: var(--card-background);
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.profile-awards h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--accent-color);
+  display: inline-block;
+  padding-bottom: 10px;
+  color: var(--primary-color);
+}
+
+/* Wrapper to add padding for the slider */
+.award-card-wrapper {
+  padding: 0 10px;
+}
+
+.award-card {
+  background-color: #2a2a2a; /* Darker card background */
+  1011
+  
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.award-card:hover {
+  transform: translateY(-5px);
+}
+
+.award-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.award-info {
+  padding: 15px;
+}
+
+.award-info h4 {
+  margin: 0 0 5px 0;
+  font-size: 1.1em;
+  color: var(--primary-color);
+}
+
+.award-info p {
+  margin: 0;
+  color: var(--secondary-color);
+  font-size: 0.9em;
+}
+
+.slick-dots li button:before {
+  color: #666;
+}
+
+.slick-dots li.slick-active button:before {
+  color: var(--accent-color);
+}
