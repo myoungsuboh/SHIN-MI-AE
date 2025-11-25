@@ -1,79 +1,46 @@
 import React from 'react';
+import { useParams, Link } from 'react-router-dom';
 import greatBirth from '@/assets/award/greatBirth.png';
-import { Link } from 'react-router-dom';
 
 import './ProfileAwards.css';
 
-const awards = [
-  {
+const ProfileAwards = () => {
+  const { id } = useParams();
+
+  const award = {
     year: '2012 ~ 2013',
     title: 'The Great Birth 3',
     ceremony: 'Star Audition',
     image: greatBirth,
-  },
-  {
-    year: '2024',
-    title: 'Best Female Vocalist',
-    ceremony: 'Pop Excellence Awards',
-    image:
-      'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    year: '2023',
-    title: 'Album of the Year (Celestial Echo)',
-    ceremony: "Music Critics' Choice",
-    image:
-      'https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    year: '2022',
-    title: 'Breakthrough Artist',
-    ceremony: 'New Talent Showcase',
-    image:
-      'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974&auto=format&fit=crop',
-  },
-  {
-    year: '2021',
-    title: 'Best Live Performance',
-    ceremony: 'Stage Presence Awards',
-    image:
-      'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop',
-  },
-  {
-    year: '2020',
-    title: 'Fan Favorite Artist',
-    ceremony: 'Audience Choice Awards',
-    image:
-      'https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=2070&auto=format&fit=crop',
-  },
-];
+  };
 
-const ProfileAwards = () => {
   return (
-    <section className="profile-awards">
-      <h2>Awards & Recognition</h2>
-      <div className="awards-slider">
-        <div className="awards-container">
-          {awards.map((award, index) => (
-            <Link to="/awards" key={index} className="award-card-link">
-              <div className="award-card">
-                <img
-                  src={award.image}
-                  alt={award.title}
-                  className="award-image"
-                />
-                <div className="award-info">
-                  <h4>{award.title}</h4>
-                  <p>
-                    {award.ceremony} - {award.year}
-                  </p>
-                </div>
-              </div>
-            </Link>
-          ))}
+    <div className="award-detail-page">
+      <div className="award-detail-content">
+        <div className="award-detail-header">
+          <img
+            src={award.image}
+            alt={award.title}
+            className="award-detail-image"
+          />
+          <div className="award-detail-title-group">
+            <h1>{award.title}</h1>
+            <p className="award-detail-meta">
+              {award.ceremony} - {award.year}
+            </p>
+          </div>
+        </div>
+        <p className="award-detail-description">
+          {award.description ||
+            'Detailed description about this award will be here.'}
+        </p>
+        <div className="award-detail-footer">
+          <Link to="/main" className="back-to-main-btn">
+            Back to Main
+          </Link>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

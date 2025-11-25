@@ -81,16 +81,6 @@
   border-bottom: none;
 }
 
-/* react-slick 커스텀 스타일 */
-.timeline-slider-wrapper .slick-slide {
-  transform: scale(0.8); /* 비활성 슬라이드 크기 축소 */
-  transition: transform 0.4s ease;
-}
-
-.timeline-slider-wrapper .slick-center {
-  transform: scale(1); /* 활성(중앙) 슬라이드 크기 확대 */
-}
-
 .timeline-slider-wrapper .slick-dots {
   bottom: -30px;
 }
@@ -132,4 +122,17 @@
 
 .timeline-slider-wrapper .slick-next {
   right: -60px;
+}
+
+/* --- 데스크톱 전용 슬라이더 스타일 (769px 이상) --- */
+@media (min-width: 769px) {
+  /* react-slick 커스텀 스타일 */
+  .timeline-slider-wrapper .slick-slide {
+    transform: scale(0.8); /* 비활성 슬라이드 크기 축소 */
+    transition: transform 0.4s ease;
+  }
+
+  .timeline-slider-wrapper .slick-center {
+    transform: scale(1); /* 활성(중앙) 슬라이드 크기 확대 */
+  }
 }

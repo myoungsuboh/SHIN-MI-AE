@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import 'antd/dist/reset.css';
 import Main from '@/pages/main/Main';
-import Intro from '@/pages/intro/Intro';
-import AwardsPage from '@/pages/awards/ProfileAwards';
+import Intro from '@/pages/title/Intro';
+import ProfileAwards from '@/pages/awards/ProfileAwards';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Intro />} />
         <Route path="/main" element={<Main />} />
-        <Route path="/awards" element={<AwardsPage />} />
+        <Route path="/awards" element={<ProfileAwards />} />
       </Routes>
     </div>
   );

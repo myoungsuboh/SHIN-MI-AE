@@ -29,7 +29,6 @@ const SocialMedia = () => {
               className="social-icon-image"
               style={{ width: '50px', height: '50px', marginBottom: '10px' }}
             />
-            <span>YouTube</span>
           </a>
         )}
         {socials.instagram && (
@@ -45,7 +44,6 @@ const SocialMedia = () => {
               className="social-icon-image"
               style={{ width: '50px', height: '50px', marginBottom: '10px' }}
             />
-            <span>Instagram</span>
           </a>
         )}
       </div>
