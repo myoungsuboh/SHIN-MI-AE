@@ -5,3 +5,7 @@
   text-align: center;
   overflow-x: hidden;
 }
+
+.page-content {
+  padding-top: 70px; /* 헤더의 높이(15px*2 + 폰트크기 등)만큼 여백을 줍니다. */
+}
