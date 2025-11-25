@@ -1,0 +1,50 @@
+.profile-socials {
+    background: var(--card-background);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.profile-socials h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    padding-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.social-links-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-link {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    background-color: #2a2a2a;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 150px;
+    height: 120px;
+}
+.social-link:hover {
+    transform: translateY(-3px);
+    background-color: var(--accent-color);
+}
+
+.social-icon-image {
+    border-radius: 8px; /* 부모 social-link와 동일하게 8px로 둥글게 */
+    object-fit: cover; /* 이미지가 잘리지 않고 영역을 채우도록 */
+}
