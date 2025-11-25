@@ -7,9 +7,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // 슬라이더에 사용할 이미지 임포트
-import introImage0 from '@/assets/introImage_0.png';
-import introImage1 from '@/assets/introImage_1.png';
-import introImage2 from '@/assets/introImage_2.png';
+import introImage0 from '@/assets/intro/introImage_0.png';
+import introImage1 from '@/assets/intro/introImage_1.png';
+import introImage2 from '@/assets/intro/introImage_2.png';
 
 const sliderImages = [introImage0, introImage1, introImage2];
 

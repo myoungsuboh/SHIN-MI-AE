@@ -4,9 +4,9 @@ import About from '@/pages/about/About';
 import ProfileAwards from '@/pages/awards/ProfileAwards';
 import Discography from '@/pages/discography/Discography';
 import SocialMedia from '@/pages/socialMedia/SocialMedia';
-import introImage0 from '@/assets/introImage_0.png';
-import introImage1 from '@/assets/introImage_1.png';
-import introImage2 from '@/assets/introImage_2.png';
+import introImage0 from '@/assets/intro/introImage_0.png';
+import introImage1 from '@/assets/intro/introImage_1.png';
+import introImage2 from '@/assets/intro/introImage_2.png';
 
 import '../main/Main.css';
 
@@ -27,14 +27,7 @@ const singerData = {
     followers: "3.2M",
     monthlyListeners: "15M"
   },
-  albums: [
-    { seq: 0, title: "Starlight Serenade", year: "2025", cover: "https://images.unsplash.com/photo-1506443432602-ac2fcd6f54e0?q=80&w=1974&auto=format&fit=crop"},
-    { seq: 1, title: "Lunar Lullaby", year: "2024", cover: "https://images.unsplash.com/photo-1506443432602-ac2fcd6f54e0?q=80&w=1974&auto=format&fit=crop"},
-    { seq: 2, title: "Cosmic Rhapsody", year: "2023", cover: "https://images.unsplash.com/photo-1506443432602-ac2fcd6f54e0?q=80&w=1974&auto=format&fit=crop"},
-    { seq: 3, title: "Dream Weaver", year: "2022", cover: "https://images.unsplash.com/photo-1506443432602-ac2fcd6f54e0?q=80&w=1974&auto=format&fit=crop"},
-    { seq: 4, title: "Galactic Harmonies", year: "2021", cover: "https://images.unsplash.com/photo-1506443432602-ac2fcd6f54e0?q=80&w=1974&auto=format&fit=crop"},
-    { seq: 5, title: "Ethereal Journey", year: "2020", cover: "https://images.unsplash.com/photo-1506443432602-ac2fcd6f54e0?q=80&w=1974&auto=format&fit=crop"},
-  ],
+  
   awards: [
     { year: "2025", title: "Artist of the Year", ceremony: "Global Music Awards", image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974&auto=format&fit=crop" },
     { year: "2024", title: "Best Female Vocalist", ceremony: "Pop Excellence Awards", image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop" },
@@ -98,7 +91,7 @@ const Main = () => {
         </main>
       </div>
       <main className="profile-main profile-main-continued">
-        <Discography albums={singerData.albums} />
+        <Discography />
 
         <ProfileAwards awards={singerData.awards} />
 
