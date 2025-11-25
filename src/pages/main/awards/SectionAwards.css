@@ -1,5 +1,20 @@
 .profile-awards {
-    /* Main.css의 .section-container 스타일을 사용하므로, 여기서는 고유 스타일만 남깁니다. */
+    background: var(--card-background);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.profile-awards h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    padding-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .awards-slider {
@@ -36,7 +51,6 @@
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     scroll-snap-align: start;
-    cursor: pointer; /* 클릭 가능하다는 것을 알려주는 커서 모양 */
 }
 
 .award-image {
@@ -79,5 +93,9 @@
     .award-card {
         flex: 0 0 90%; /* Show one card and a peek of the next */
         scroll-snap-align: center;
+    }
+    .awards-container {
+        padding-left: 5%;
+        padding-right: 5%;
     }
 }

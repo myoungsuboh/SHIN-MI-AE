@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import './Discography.css';
+import React from 'react';
+import Slider from 'react-slick';
+import './SectionDiscography.css';
+
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Discography = () => {
-  const [openAlbumSeq, setOpenAlbumSeq] = useState(null);
-
   const albums = [
     {
       seq: 0,
@@ -94,45 +96,65 @@ const Discography = () => {
     ],
   };
 
-  const handleToggle = (albumSeq) => {
-    setOpenAlbumSeq(openAlbumSeq === albumSeq ? null : albumSeq);
+  const settings = {
+    dots: true, // 하단에 점 네비게이션 표시
+    infinite: true, // 무한 루프
+    speed: 500, // 전환 속도
+    slidesToShow: 1, // 한 번에 보여줄 슬라이드 수
+    slidesToScroll: 1, // 한 번에 스크롤할 슬라이드 수
+    centerMode: true, // 중앙 정렬 모드 활성화
+    centerPadding: '150px', // 중앙 슬라이드와 양 옆 슬라이드 사이의 간격
+    arrows: true, // 좌우 화살표 버튼 표시
+    responsive: [
+      {
+        breakpoint: 1024, // 1024px 이하
+        settings: {
+          centerPadding: '80px',
+        },
+      },
+      {
+        breakpoint: 768, // 768px 이하 (모바일)
+        settings: {
+          arrows: false, // 모바일에서는 화살표 숨김
+          centerPadding: '40px',
+          // 모바일에서는 중앙 모드를 끄고, 하나의 슬라이드만 꽉 채워서 보여줍니다.
+          centerMode: false,
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
     <section className="profile-albums">
       <h2>Discography</h2>
-      <div className="timeline">
-        {albums.map((album, index) => (
-          <div key={album.seq} className="timeline-item">
-            <div
-              className={`timeline-content ${
-                openAlbumSeq === album.seq ? 'active' : ''
-              }`}
-            >
-              <div
-                className="timeline-header"
-                onClick={() => handleToggle(album.seq)}
-              >
-                <img
-                  src={album.cover}
-                  alt={album.title}
-                  className="timeline-album-cover"
-                />
-                <div className="timeline-title-group">
-                  <h3 className="timeline-album-title">{album.title}</h3>
-                  <span className="timeline-album-year">{album.year}</span>
+      <div className="timeline-slider-wrapper">
+        <Slider {...settings}>
+          {albums.map((album) => (
+            <div key={album.seq} className="discography-slide">
+              <div className="discography-card">
+                <div className="discography-image-wrapper">
+                  <img
+                    src={album.cover}
+                    alt={album.title}
+                    className="discography-card-image"
+                  />
+                </div>
+                <div className="discography-card-info">
+                  <div className="discography-card-header">
+                    <h4>{album.title}</h4>
+                    <p>{album.year}</p>
+                  </div>
+                  <ul className="discography-card-track-list">
+                    {sampleTracks[album.title]?.map((track, trackIndex) => (
+                      <li key={trackIndex}>{track}</li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-              <div className="timeline-track-list-container">
-                <ul className="timeline-track-list">
-                  {sampleTracks[album.title]?.map((track, trackIndex) => (
-                    <li key={trackIndex}>{track}</li>
-                  ))}
-                </ul>
-              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </Slider>
       </div>
     </section>
   );

@@ -1,8 +1,8 @@
 import React from 'react';
 import greatBirth from '@/assets/award/greatBirth.png';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-import './ProfileAwards.css';
+import './SectionAwards.css';
 
 const awards = [
   {
@@ -49,14 +49,22 @@ const awards = [
 ];
 
 const ProfileAwards = () => {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate('/awards');
+  };
+
   return (
-    <section className="profile-awards">
-      <h2>Awards & Recognition</h2>
-      <div className="awards-slider">
-        <div className="awards-container">
-          {awards.map((award, index) => (
-            <Link to="/awards" key={index} className="award-card-link">
-              <div className="award-card">
+    <div className="awards-section-wrapper">
+      <div className="awards-header-overlay">
+        <h2 className="awards-section-title">Awards & Recognition</h2>
+      </div>
+      <main className="awards-main-content">
+        <div className="awards-slider">
+          <div className="awards-container">
+            {awards.map((award, index) => (
+              <div key={index} className="award-card" onClick={handleCardClick}>
                 <img
                   src={award.image}
                   alt={award.title}
@@ -69,11 +77,11 @@ const ProfileAwards = () => {
                   </p>
                 </div>
               </div>
-            </Link>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </main>
+    </div>
   );
 };
 

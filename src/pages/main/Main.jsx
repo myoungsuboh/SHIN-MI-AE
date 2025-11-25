@@ -1,45 +1,28 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Slider from 'react-slick';
-import About from '@/pages/about/About';
-import ProfileAwards from '@/pages/awards/ProfileAwards';
-import Discography from '@/pages/discography/Discography';
-import SocialMedia from '@/pages/socialMedia/SocialMedia';
+import About from '@/pages/main/about/SectionAbout';
+import ProfileAwards from '@/pages/main/awards/SectionAwards';
+import Discography from '@/pages/main/discography/SectionDiscography';
+import SocialMedia from '@/pages/main/socialMedia/SectionSocialMedia';
 import introImage0 from '@/assets/intro/introImage_0.png';
 import introImage1 from '@/assets/intro/introImage_1.png';
 import introImage2 from '@/assets/intro/introImage_2.png';
 
 import '../main/Main.css';
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const singerData = {
-  name: "SHIN MI AE",
-  genre: "Synth-Pop & Ethereal Wave",
-  bio: "SHIN MI AE is a solo artist known for her celestial voice and dreamy soundscapes. Blending synth-pop with ethereal wave, her music transports listeners to another dimension. From humble beginnings, she has risen to international acclaim, captivating audiences with her mesmerizing performances. Her journey began with a deep fascination for the electronic music of the 80s and the ambient textures of contemporary artists. This unique combination has shaped her signature sound, which is both nostalgic and futuristic. SHIN MI AE believes that music is a bridge to the unseen, a way to explore the depths of human emotion and the mysteries of the cosmos.",
-  sliderImages: [
-    introImage0,
-    introImage1,
-    introImage2
-  ],
+  name: 'SHIN MI AE',
+  genre: 'Synth-Pop & Ethereal Wave',
+  bio: 'SHIN MI AE is a solo artist known for her celestial voice and dreamy soundscapes. Blending synth-pop with ethereal wave, her music transports listeners to another dimension. From humble beginnings, she has risen to international acclaim, captivating audiences with her mesmerizing performances. Her journey began with a deep fascination for the electronic music of the 80s and the ambient textures of contemporary artists. This unique combination has shaped her signature sound, which is both nostalgic and futuristic. SHIN MI AE believes that music is a bridge to the unseen, a way to explore the depths of human emotion and the mysteries of the cosmos.',
+  sliderImages: [introImage0, introImage1, introImage2],
   stats: {
     albums: 5,
-    followers: "3.2M",
-    monthlyListeners: "15M"
+    followers: '3.2M',
+    monthlyListeners: '15M',
   },
-  
-  awards: [
-    { year: "2025", title: "Artist of the Year", ceremony: "Global Music Awards", image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974&auto=format&fit=crop" },
-    { year: "2024", title: "Best Female Vocalist", ceremony: "Pop Excellence Awards", image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop" },
-    { year: "2023", title: "Album of the Year (Celestial Echo)", ceremony: "Music Critics' Choice", image: "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=2070&auto=format&fit=crop" },
-    { year: "2022", title: "Breakthrough Artist", ceremony: "New Talent Showcase", image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974&auto=format&fit=crop" },
-    { year: "2021", title: "Best Live Performance", ceremony: "Stage Presence Awards", image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop" },
-    { year: "2020", title: "Fan Favorite Artist", ceremony: "Audience Choice Awards", image: "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=2070&auto=format&fit=crop" },
-  ],
-  socials: {
-    youtube: "https://youtube.com/channel/UCpJRX-k8FNgsy78rGGcV4Lg?si=pou3DUSDLRm4ybTJ",
-    instagram: "https://www.instagram.com/mwesin/"
-  }
 };
 
 const Main = () => {
@@ -62,7 +45,11 @@ const Main = () => {
           <Slider {...sliderSettings} className="header-slider">
             {singerData.sliderImages.map((img, index) => (
               <div key={index} className="slider-image-container">
-                <img src={img} alt={`${singerData.name} intro image ${index + 1}`} className="slider-image" />
+                <img
+                  src={img}
+                  alt={`${singerData.name} intro image ${index + 1}`}
+                  className="slider-image"
+                />
               </div>
             ))}
           </Slider>
@@ -72,8 +59,10 @@ const Main = () => {
           </div>
         </header>
         <main className="profile-main">
-          <About bio={singerData.bio} />
-          
+          <div className="section-container">
+            <About bio={singerData.bio} />
+          </div>
+
           <section className="profile-stats">
             <div className="stat-item">
               <h3>{singerData.stats.albums}</h3>
@@ -91,19 +80,25 @@ const Main = () => {
         </main>
       </div>
       <main className="profile-main profile-main-continued">
-        <Discography />
+        <div className="section-container">
+          <Discography />
+        </div>
 
-        <ProfileAwards awards={singerData.awards} />
+        <ProfileAwards />
 
-        <SocialMedia socials={singerData.socials} />
+        <div className="section-container">
+          <SocialMedia />
+        </div>
       </main>
 
       <footer className="profile-footer">
-        <p>&copy; {new Date().getFullYear()} {singerData.name} Music. All Rights Reserved.</p>
+        <p>
+          &copy; {new Date().getFullYear()} {singerData.name} Music. All Rights
+          Reserved.
+        </p>
       </footer>
     </div>
   );
 };
-
 
 export default Main;

@@ -286,3 +286,5 @@ body {
     }
 
 }
+/* Main.css는 이제 MainTitle.css와 겹치지 않는 Main 컴포넌트의 스타일만 포함합니다. */
+/* MainTitle 관련 스타일은 MainTitle.css에서 관리됩니다. */

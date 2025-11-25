@@ -1,22 +1,19 @@
-import React, { useRef } from 'react';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import 'antd/dist/reset.css';
 import Main from '@/pages/main/Main';
-import { MainTitle } from '@/pages';
+import Intro from '@/pages/intro/Intro';
+import AwardsPage from '@/pages/awards/ProfileAwards';
 
 function App() {
-  const profileRef = useRef(null);
-
-  const scrollToProfile = () => {
-    profileRef.current.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <div className="App">
-      <MainTitle onScrollToProfile={scrollToProfile} />
-      <div ref={profileRef}>
-        <Main />
-      </div>
+      <Routes>
+        <Route path="/" element={<Intro />} />
+        <Route path="/main" element={<Main />} />
+        <Route path="/awards" element={<AwardsPage />} />
+      </Routes>
     </div>
   );
 }
