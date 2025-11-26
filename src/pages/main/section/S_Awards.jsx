@@ -71,12 +71,13 @@ const S_Awards = () => {
     slidesToShow: getSlidesToShow(),
     slidesToScroll: 1,
     arrows: width > 768,
+    focusOnSelect: true,
   };
 
   return (
     <div className="awards-section-wrapper">
       <div className="awards-header-overlay">
-        <h2 className="awards-section-title">Awards & Recognition</h2>
+        <h2 className="awards-section-title">Awards</h2>
       </div>
       <main className="awards-main-content">
         <div className="awards-slider">
