@@ -69,8 +69,8 @@ const S_Awards = () => {
     infinite: false,
     speed: 500,
     slidesToShow: getSlidesToShow(),
-    slidesToScroll: 1,
-    arrows: width > 768,
+    slidesToScroll: getSlidesToShow(),
+    arrows: false,
     focusOnSelect: true,
   };
 
