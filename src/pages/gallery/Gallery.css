@@ -68,8 +68,9 @@
 
 .video-card-title {
   padding: 15px;
-  font-weight: bold;
+  font-weight: 500;
   color: #e0e0e0; /* 밝은 글자색으로 변경 */
+  white-space: pre-line;
 }
 
 /* Modal Styles */
@@ -118,7 +119,9 @@
 }
 
 .video-info h3 {
-  margin: 0 0 10px;
+  margin-top: 0;
+  font-size: 1.5rem;
+  white-space: pre-line;
 }
 
 .video-info p {

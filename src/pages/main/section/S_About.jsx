@@ -1,4 +1,5 @@
 import React from 'react';
+import './S_About.css';
 
 const S_About = ({ bio }) => {
   return (

@@ -101,7 +101,6 @@ const Discography = () => {
     fade: true,
     cssEase: 'linear',
     arrows: true,
-    focusOnSelect: true,
   };
 
   return (

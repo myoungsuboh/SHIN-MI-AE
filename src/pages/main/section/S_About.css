@@ -1,0 +1,34 @@
+.profile-bio {
+  padding: 50px 20px;
+  background-color: #111;
+  color: #fff;
+}
+
+.profile-bio h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.profile-bio p {
+  max-width: 800px;
+  font-family: 'GmarketSans', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ccc;
+  white-space: pre-line; 
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .profile-bio h2 {
+    font-size: 2.2rem;
+  }
+  .profile-bio p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+}

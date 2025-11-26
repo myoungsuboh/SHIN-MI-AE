@@ -32,7 +32,7 @@ const videos = [
   },
   {
     id: 13,
-    title: '2016 대한민국 실용음악 페스티벌 1부 중_신미애',
+    title: '2016 대한민국 실용음악 페스티벌',
     description: '2016 대한민국 실용음악 페스티벌 1부 중_신미애',
     thumbnail: 'https://i.ytimg.com/vi/yc8hwJKHuC8/hqdefault.jpg',
     embedUrl: 'https://tv.naver.com/embed/1211611?autoPlay=true',
@@ -54,7 +54,7 @@ const videos = [
   },
   {
     id: 31,
-    title: '위대한 탄생 3 - "내가 고백을 하면 깜짝 놀랄 거야"',
+    title: '위대한 탄생 3 \n "내가 고백을 하면 깜짝 놀랄 거야"',
     description: '2013년 방영된 MBC 위대한 탄생 3에서의 라이브 무대',
     thumbnail: 'https://img.imbc.com/adams/Corner/20131/130017883715009817.jpg',
     embedUrl: 'https://www.youtube.com/embed/yc8hwJKHuC8?autoplay=1',
