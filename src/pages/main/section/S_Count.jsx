@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import './S_Count.css';
 
-const albums = 0;
+const albums = 1;
 
 const SCount = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,7 +16,7 @@ const SCount = () => {
     try {
       const formData = new FormData();
       formData.append('action', 'get_instagram_data_for_follower');
-      formData.append('account_handle', 'shin_mi_ae_');
+      formData.append('account_handle', 'mwesin');
       formData.append(
         'source',
         '무료 라이브 Instagram 팔로워 수 | Path Social'

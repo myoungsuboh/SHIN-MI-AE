@@ -59,9 +59,9 @@ const S_Awards = () => {
       return 1;
     }
     if (width <= 1024) {
-      return 2;
+      return 3;
     }
-    return 3;
+    return 4;
   };
 
   const settings = {
@@ -69,7 +69,7 @@ const S_Awards = () => {
     infinite: false,
     speed: 500,
     slidesToShow: getSlidesToShow(),
-    slidesToScroll: getSlidesToShow(),
+    slidesToScroll: 1,
     arrows: false,
     focusOnSelect: true,
   };

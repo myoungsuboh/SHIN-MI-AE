@@ -1,7 +1,5 @@
 import React from 'react';
-
-import youtubeIcon from '@/assets/logo/youtube.png';
-import instagramIcon from '@/assets/logo/instagram.png';
+import { YoutubeOutlined, InstagramOutlined } from '@ant-design/icons';
 
 import './S_SocialMedia.css';
 
@@ -22,11 +20,7 @@ const S_SocialMedia = () => {
             rel="noopener noreferrer"
             className="social-link"
           >
-            <img
-              src={youtubeIcon}
-              alt="YouTube"
-              className="social-icon-image"
-            />
+            <YoutubeOutlined className="social-icon" />
           </a>
         )}
         {socials.instagram && (
@@ -36,11 +30,7 @@ const S_SocialMedia = () => {
             rel="noopener noreferrer"
             className="social-link"
           >
-            <img
-              src={instagramIcon}
-              alt="Instagram"
-              className="social-icon-image"
-            />
+            <InstagramOutlined className="social-icon" />
           </a>
         )}
       </div>

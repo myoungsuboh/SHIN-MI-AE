@@ -1,4 +1,6 @@
 import React from 'react';
+import { FloatButton } from 'antd';
+import { ArrowUpOutlined } from '@ant-design/icons';
 import Header from '@/Header';
 import Main from '@/pages/main/Main';
 import Intro from '@/pages/title/Intro';
@@ -17,6 +19,10 @@ const LayoutWithHeader = ({ children }) => {
     <>
       <Header />
       <div className="page-content">{children}</div>
+      <FloatButton.BackTop
+        icon={<ArrowUpOutlined />}
+        style={{ bottom: 100 }}
+      />
     </>
   );
 };

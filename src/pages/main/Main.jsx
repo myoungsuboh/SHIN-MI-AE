@@ -1,6 +1,11 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { useTranslation } from 'react-i18next';
+import {
+  YoutubeOutlined,
+  InstagramOutlined,
+  PhoneOutlined,
+} from '@ant-design/icons';
 import SCount from '@/pages/main/section/S_Count';
 import S_About from '@/pages/main/section/S_About';
 import S_Awards from '@/pages/main/section/S_Awards';
@@ -14,6 +19,12 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const sliderImages = [introImage0, introImage1, introImage2];
+
+const socials = {
+  youtube:
+    'https://youtube.com/channel/UCpJRX-k8FNgsy78rGGcV4Lg?si=pou3DUSDLRm4ybTJ',
+  instagram: 'https://www.instagram.com/mwesin/',
+};
 
 const Main = () => {
   const { t } = useTranslation();
@@ -59,18 +70,38 @@ const Main = () => {
       </div>
       <main className="profile-main profile-main-continued">
         <S_Awards />
-        <div className="section-container">
-          <S_SocialMedia />
-        </div>
       </main>
 
       <footer className="profile-footer">
-        <p>
-          {t('footer', {
-            year: new Date().getFullYear(),
-            artistName: t('artistName'),
-          })}
-        </p>
+        <div className="footer-content">
+          <p className="footer-copyright">
+            {t('footer', {
+              year: new Date().getFullYear(),
+              artistName: t('artistName'),
+            })}
+          </p>
+          <div className="footer-socials">
+            <a
+              href={socials.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Youtube"
+            >
+              <YoutubeOutlined />
+            </a>
+            <a
+              href={socials.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <InstagramOutlined />
+            </a>
+            <a href="tel:YOUR_PHONE_NUMBER" aria-label="Phone">
+              <PhoneOutlined />
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
   );
