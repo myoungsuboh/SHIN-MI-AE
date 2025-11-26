@@ -31,6 +31,20 @@ const videos = [
     embedUrl: 'https://www.youtube.com/embed/4ibkJBuwUU4?autoplay=1',
   },
   {
+    id: 13,
+    title: '2016 대한민국 실용음악 페스티벌 1부 중_신미애',
+    description: '2016 대한민국 실용음악 페스티벌 1부 중_신미애',
+    thumbnail: 'https://i.ytimg.com/vi/yc8hwJKHuC8/hqdefault.jpg',
+    embedUrl: 'https://tv.naver.com/embed/1211611?autoPlay=true',
+  },
+  {
+    id: 14,
+    title: 'Let It Go (Frozen OST Cover)',
+    description: "애니메이션 겨울왕국(Frozen)의 'Let It Go' 커버 영상입니다.",
+    thumbnail: 'https://i.ytimg.com/vi/3dbJvm0vPV0/hqdefault.jpg',
+    embedUrl: 'https://www.youtube.com/embed/3dbJvm0vPV0?autoplay=1',
+  },
+  {
     id: 30,
     title: '위대한 탄생 3 - "Queen of the night',
     description: '2013년 방영된 MBC 위대한 탄생 3 방송',
@@ -88,7 +102,6 @@ const Gallery = () => {
 
   return (
     <div className="gallery-container">
-      <h2 className="gallery-title">Gallery</h2>
       <div className="video-grid">
         {videos.map((video) => (
           <div
