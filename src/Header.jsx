@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './Header.css';
 
@@ -24,6 +24,14 @@ const Header = () => {
             }
           >
             {t('navDiscography')}
+          </NavLink>
+          <NavLink
+            to="/lectures"
+            className={({ isActive }) =>
+              isActive ? 'nav-link active' : 'nav-link'
+            }
+          >
+            {t('navLectures')}
           </NavLink>
           <NavLink
             to="/gallery"

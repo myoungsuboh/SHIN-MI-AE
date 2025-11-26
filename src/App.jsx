@@ -3,6 +3,7 @@ import Header from '@/Header';
 import Main from '@/pages/main/Main';
 import Intro from '@/pages/title/Intro';
 import Gallery from '@/pages/gallery/Gallery';
+import Lectures from '@/pages/lectures/Lectures';
 import ProfileAwards from '@/pages/awards/ProfileAwards';
 import Discography from '@/pages/discography/Discography';
 
@@ -38,6 +39,14 @@ function App() {
           element={
             <LayoutWithHeader>
               <ProfileAwards />
+            </LayoutWithHeader>
+          }
+        />
+        <Route
+          path="/lectures"
+          element={
+            <LayoutWithHeader>
+              <Lectures />
             </LayoutWithHeader>
           }
         />
