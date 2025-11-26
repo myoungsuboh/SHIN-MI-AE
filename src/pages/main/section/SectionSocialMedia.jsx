@@ -3,7 +3,7 @@ import React from 'react';
 import youtubeIcon from '@/assets/logo/youtube.png';
 import instagramIcon from '@/assets/logo/instagram.png';
 
-import './SectionSocialMedia.css'; // 새로 생성한 CSS 파일 임포트
+import './SectionSocialMedia.css';
 
 const socials = {
   youtube:

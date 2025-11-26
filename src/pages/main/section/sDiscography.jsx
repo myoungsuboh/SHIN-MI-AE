@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
-import './SectionDiscography.css';
+import useWindowSize from '@/hooks/useWindowSize';
 
+import './sDiscography.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import useWindowSize from '../../../hooks/useWindowSize'; // useWindowSize 훅 임포트
 
 const Discography = () => {
   const albums = [
@@ -101,22 +101,22 @@ const Discography = () => {
 
   const getCenterPadding = () => {
     if (width <= 768) {
-      return '40px'; // 모바일
+      return '40px';
     }
     if (width <= 1024) {
-      return '80px'; // 태블릿
+      return '80px';
     }
-    return '150px'; // 데스크톱
+    return '150px';
   };
 
   const settings = {
-    dots: true, // 하단에 점 네비게이션 표시
-    infinite: false, // 무한 루프
-    speed: 500, // 전환 속도
-    slidesToShow: 1, // 한 번에 보여줄 슬라이드 수
-    slidesToScroll: 1, // 한 번에 스크롤할 슬라이드 수
-    centerMode: true, // 중앙 정렬 모드 활성화
-    centerPadding: getCenterPadding(), // 중앙 슬라이드와 양 옆 슬라이드 사이의 간격
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: getCenterPadding(),
     arrows: width > 768,
   };
 

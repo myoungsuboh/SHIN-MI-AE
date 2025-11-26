@@ -2,7 +2,7 @@ import React from 'react';
 import greatBirth from '@/assets/award/greatBirth.png';
 import { useNavigate } from 'react-router-dom';
 
-import './SectionAwards.css';
+import './sAwards.css';
 
 const awards = [
   {
@@ -51,8 +51,8 @@ const awards = [
 const ProfileAwards = () => {
   const navigate = useNavigate();
 
-  const handleCardClick = () => {
-    navigate('/awards');
+  const handleCardClick = (id) => {
+    navigate(`/awards/${id}`);
   };
 
   return (
@@ -63,8 +63,12 @@ const ProfileAwards = () => {
       <main className="awards-main-content">
         <div className="awards-slider">
           <div className="awards-container">
-            {awards.map((award, index) => (
-              <div key={index} className="award-card" onClick={handleCardClick}>
+            {awards.map((award, idx) => (
+              <div
+                key={idx}
+                className="award-card"
+                onClick={() => handleCardClick(idx)}
+              >
                 <img
                   src={award.image}
                   alt={award.title}

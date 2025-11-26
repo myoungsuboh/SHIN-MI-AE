@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import Slider from 'react-slick';
-import About from '@/pages/main/about/SectionAbout';
-import ProfileAwards from '@/pages/main/awards/SectionAwards';
-import Discography from '@/pages/main/discography/SectionDiscography';
-import SocialMedia from '@/pages/main/socialMedia/SectionSocialMedia';
+import About from '@/pages/main/section/sAbout';
+import ProfileAwards from '@/pages/main/section/sAwards';
+import Discography from '@/pages/main/section/sDiscography';
+import SocialMedia from '@/pages/main/section/SectionSocialMedia';
 import introImage0 from '@/assets/intro/introImage_0.png';
 import introImage1 from '@/assets/intro/introImage_1.png';
 import introImage2 from '@/assets/intro/introImage_2.png';

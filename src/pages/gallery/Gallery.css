@@ -1,0 +1,120 @@
+.gallery-container {
+  padding: 40px 20px;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.video-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.video-card-title {
+  padding: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 900px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.video-responsive {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+  background: #000;
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-info {
+  color: #fff;
+  margin-top: 15px;
+}
+
+.video-info h3 {
+  margin: 0 0 10px;
+}
+
+.video-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0;
+  font-weight: 300;
+  line-height: 1;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+  outline: none;
+}
