@@ -97,7 +97,7 @@ const Discography = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     fade: true,
     cssEase: 'linear',
     arrows: false,

@@ -1,18 +1,53 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './Intro.css';
 
-// ½½¶óÀÌ´õ CSS ÀÓÆ÷Æ®
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-// ½½¶óÀÌ´õ¿¡ »ç¿ëÇÒ ÀÌ¹ÌÁö ÀÓÆ÷Æ®
 import introImage0 from '@/assets/intro/introImage_0.png';
 import introImage1 from '@/assets/intro/introImage_1.png';
 import introImage2 from '@/assets/intro/introImage_2.png';
 
 const sliderImages = [introImage0, introImage1, introImage2];
+
+const LanguageSwitcher = () => {
+  const { i18n } = useTranslation();
+  
+  const changeLanguage = (e) => {
+    i18n.changeLanguage(e.target.value);
+  };
+
+  return (
+    <div
+      className="language-switcher"
+      style={{
+        position: 'absolute',
+        top: '20px',
+        right: '20px',
+        zIndex: 10,
+      }}
+    >
+      <select
+        value={i18n.language}
+        onChange={changeLanguage}
+        style={{
+          background: 'rgba(0,0,0,0.5)',
+          color: 'white',
+          padding: '8px',
+          borderRadius: '5px',
+          border: '1px solid #555',
+        }}
+      >
+        <option value="ko">í•œêµ­ì–´</option>
+        <option value="en">English</option>
+        <option value="ja">æ—¥æœ¬èªž</option>
+      </select>
+    </div>
+  );
+};
 
 const MainTitle = () => {
   const navigate = useNavigate();
@@ -35,6 +70,7 @@ const MainTitle = () => {
 
   return (
     <header className="main-intro-header">
+      <LanguageSwitcher />
       <Slider {...sliderSettings} className="main-intro-slider">
         {sliderImages.map((img, index) => (
           <div key={index} className="main-intro-slide-container">

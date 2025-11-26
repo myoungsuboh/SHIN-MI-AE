@@ -1,11 +1,13 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './S_About.css';
 
-const S_About = ({ bio }) => {
+const S_About = () => {
+  const { t } = useTranslation();
   return (
     <section className="profile-bio">
-      <h2>About</h2>
-      <p>{bio}</p>
+      <h2>{t('aboutTitle')}</h2>
+      <p>{t('bio')}</p>
     </section>
   );
 };

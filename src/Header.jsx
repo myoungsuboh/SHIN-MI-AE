@@ -1,8 +1,10 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './Header.css';
 
 const Header = () => {
+  const { t } = useTranslation();
   return (
     <header className="site-header">
       <div className="header-content">
@@ -13,7 +15,7 @@ const Header = () => {
               isActive ? 'nav-link active' : 'nav-link'
             }
           >
-            Profile
+            {t('navProfile')}
           </NavLink>
           <NavLink
             to="/discography"
@@ -21,7 +23,7 @@ const Header = () => {
               isActive ? 'nav-link active' : 'nav-link'
             }
           >
-            Discography
+            {t('navDiscography')}
           </NavLink>
           <NavLink
             to="/gallery"
@@ -29,7 +31,7 @@ const Header = () => {
               isActive ? 'nav-link active' : 'nav-link'
             }
           >
-            Gallery
+            {t('navGallery')}
           </NavLink>
         </nav>
       </div>

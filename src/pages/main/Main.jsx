@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
+import { useTranslation } from 'react-i18next';
 import SCount from '@/pages/main/section/S_Count';
 import S_About from '@/pages/main/section/S_About';
 import S_Awards from '@/pages/main/section/S_Awards';
@@ -12,14 +13,10 @@ import '../main/Main.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const singerData = {
-  name: 'SHIN MI AE',
-  genre: 'Synth-Pop & Ethereal Wave',
-  bio: '신미애는 천상의 목소리와 듣는 이를 몰입시키는 몽환적인 사운드로 잘 알려진 솔로 아티스트입니다. 신스팝의 생동감 넘치는 에너지와 에테리얼 웨이브의 서정적인 분위기를 능숙하게 결합하여, 그녀의 음악은 리스너들을 완전히 새로운 차원으로 이끄는 독특한 소리의 태피스트리를 만들어냅니다.\n\n그녀의 예술성은 정교한 멜로디와 감성을 자극하는 가사를 엮어내는 능력에서 잘 드러나며, 이는 전 세계 관객들에게 깊은 울림을 주는 매혹적이고 감성 풍부한 공연으로 이어집니다.\n\n그녀의 음악적 여정은 80년대의 선구적인 전자 음악과 현대 사운드 아티스트들의 앰비언트한 질감에 대한 깊은 매료에서 시작되었습니다. 이 독특한 조합은 향수를 불러일으키면서도 동시에 미래지향적인 그녀만의 시그니처 사운드를 만들어냈습니다.\n\n신미애는 음악이 보이지 않는 세계를 잇는 다리이며, 인간 감정의 깊이와 우주의 신비를 탐험하는 심오한 매개체라고 굳게 믿습니다. 각각의 곡은 더 큰, 전개되는 이야기의 한 조각으로 세심하게 제작되어, 리스너들을 내성적이고 초월적인 탐험으로 초대합니다.\n\n단순한 가창자를 넘어, 신미애는 작사, 작곡에도 적극적으로 참여하며 자신만의 음악적 세계관을 견고히 구축하고 있습니다. 그녀의 가사는 일상의 소소한 순간부터 삶의 근원적인 질문에 이르기까지 폭넓은 주제를 다루며, 시적인 표현과 진솔한 감정으로 듣는 이의 마음을 움직입니다.\n\n무대 위에서는 폭발적인 에너지와 섬세한 감정 표현을 오가며 관객을 압도하는 카리스마를 발산하며, 모든 공연을 하나의 잊을 수 없는 경험으로 만듭니다. 그녀는 팬들과의 소통을 중요하게 생각하며, 음악을 통해 받은 사랑을 다시 세상에 나누는 선한 영향력을 실천하는 아티스트로 꾸준히 성장하고 있습니다.',
-  sliderImages: [introImage0, introImage1, introImage2],
-};
+const sliderImages = [introImage0, introImage1, introImage2];
 
 const Main = () => {
+  const { t } = useTranslation();
   const sliderSettings = {
     dots: false,
     arrows: false,
@@ -37,24 +34,24 @@ const Main = () => {
       <div className="initial-view">
         <header className="profile-header">
           <Slider {...sliderSettings} className="header-slider">
-            {singerData.sliderImages.map((img, index) => (
+            {sliderImages.map((img, index) => (
               <div key={index} className="slider-image-container">
                 <img
                   src={img}
-                  alt={`${singerData.name} intro image ${index + 1}`}
+                  alt={`${t('artistName')} intro image ${index + 1}`}
                   className="slider-image"
                 />
               </div>
             ))}
           </Slider>
           <div className="header-overlay">
-            <h1 className="singer-name">{singerData.name}</h1>
-            <p className="singer-genre">{singerData.genre}</p>
+            <h1 className="singer-name">{t('artistName')}</h1>
+            <p className="singer-genre">{t('artistGenre')}</p>
           </div>
         </header>
         <main className="profile-main">
           <div className="section-container">
-            <S_About bio={singerData.bio} />
+            <S_About />
           </div>
 
           <SCount />
@@ -69,8 +66,10 @@ const Main = () => {
 
       <footer className="profile-footer">
         <p>
-          &copy; {new Date().getFullYear()} {singerData.name} Music. All Rights
-          Reserved.
+          {t('footer', {
+            year: new Date().getFullYear(),
+            artistName: t('artistName'),
+          })}
         </p>
       </footer>
     </div>
