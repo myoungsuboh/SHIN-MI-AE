@@ -2,7 +2,7 @@ import React from 'react';
 import greatBirth from '@/assets/award/greatBirth.png';
 import { useNavigate } from 'react-router-dom';
 
-import './sAwards.css';
+import './S_Awards.css';
 
 const awards = [
   {

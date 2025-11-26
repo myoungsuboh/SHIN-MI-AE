@@ -3,7 +3,7 @@ import React from 'react';
 import youtubeIcon from '@/assets/logo/youtube.png';
 import instagramIcon from '@/assets/logo/instagram.png';
 
-import './SectionSocialMedia.css';
+import './S_SocialMedia.css';
 
 const socials = {
   youtube:

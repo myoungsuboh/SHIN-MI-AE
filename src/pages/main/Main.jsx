@@ -1,15 +1,15 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
-import About from '@/pages/main/section/sAbout';
-import ProfileAwards from '@/pages/main/section/sAwards';
-import Discography from '@/pages/main/section/sDiscography';
-import SocialMedia from '@/pages/main/section/SectionSocialMedia';
+import SCount from '@/pages/main/section/S_Count';
+import S_About from '@/pages/main/section/S_About';
+import ProfileAwards from '@/pages/main/section/S_Awards';
 import introImage0 from '@/assets/intro/introImage_0.png';
 import introImage1 from '@/assets/intro/introImage_1.png';
 import introImage2 from '@/assets/intro/introImage_2.png';
+import Discography from '@/pages/main/section/S_Discography';
+import SocialMedia from '@/pages/main/section/S_SocialMedia';
 
 import '../main/Main.css';
-
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -18,11 +18,6 @@ const singerData = {
   genre: 'Synth-Pop & Ethereal Wave',
   bio: 'SHIN MI AE is a solo artist known for her celestial voice and dreamy soundscapes. Blending synth-pop with ethereal wave, her music transports listeners to another dimension. From humble beginnings, she has risen to international acclaim, captivating audiences with her mesmerizing performances. Her journey began with a deep fascination for the electronic music of the 80s and the ambient textures of contemporary artists. This unique combination has shaped her signature sound, which is both nostalgic and futuristic. SHIN MI AE believes that music is a bridge to the unseen, a way to explore the depths of human emotion and the mysteries of the cosmos.',
   sliderImages: [introImage0, introImage1, introImage2],
-  stats: {
-    albums: 5,
-    followers: '3.2M',
-    monthlyListeners: '15M',
-  },
 };
 
 const Main = () => {
@@ -60,23 +55,10 @@ const Main = () => {
         </header>
         <main className="profile-main">
           <div className="section-container">
-            <About bio={singerData.bio} />
+            <S_About bio={singerData.bio} />
           </div>
 
-          <section className="profile-stats">
-            <div className="stat-item">
-              <h3>{singerData.stats.albums}</h3>
-              <p>Albums</p>
-            </div>
-            <div className="stat-item">
-              <h3>{singerData.stats.followers}</h3>
-              <p>Followers</p>
-            </div>
-            <div className="stat-item">
-              <h3>{singerData.stats.monthlyListeners}</h3>
-              <p>Listeners</p>
-            </div>
-          </section>
+          <SCount />
         </main>
       </div>
       <main className="profile-main profile-main-continued">

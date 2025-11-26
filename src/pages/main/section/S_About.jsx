@@ -1,6 +1,6 @@
 import React from 'react';
 
-const About = ({ bio }) => {
+const S_About = ({ bio }) => {
   return (
     <section className="profile-bio">
       <h2>About</h2>
@@ -9,4 +9,4 @@ const About = ({ bio }) => {
   );
 };
 
-export default About;
+export default S_About;
