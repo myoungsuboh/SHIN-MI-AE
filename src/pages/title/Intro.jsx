@@ -44,6 +44,8 @@ const LanguageSwitcher = () => {
         <option value="ko">한국어</option>
         <option value="en">English</option>
         <option value="ja">日本語</option>
+        <option value="uz">Oʻzbekcha</option>
+        <option value="ru">Русский</option>
       </select>
     </div>
   );

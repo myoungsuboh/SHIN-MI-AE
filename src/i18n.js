@@ -8,7 +8,7 @@ i18n
   .use(LanguageDetector) // 사용자의 브라우저 언어를 감지합니다.
   .use(initReactI18next) // i18next를 리액트와 통합합니다.
   .init({
-    supportedLngs: ['ko', 'en', 'ja'], // 지원할 언어 목록
+    supportedLngs: ['ko', 'en', 'ja', 'uz', 'ru'], // 지원할 언어 목록
     fallbackLng: 'ko', // 기본 언어
     detection: {
       order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag'],
@@ -23,4 +23,3 @@ i18n
   });
 
 export default i18n;
-
