@@ -21,36 +21,16 @@
     position: relative;
 }
 
-.awards-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding-bottom: 15px; /* For scrollbar */
-    scroll-snap-type: x mandatory;
-}
-
-/* Scrollbar styling */
-.awards-container::-webkit-scrollbar {
-    height: 8px;
-}
-
-.awards-container::-webkit-scrollbar-track {
-    background: #2a2a2a;
-    border-radius: 4px;
-}
-
-.awards-container::-webkit-scrollbar-thumb {
-    background-color: #555;
-    border-radius: 4px;
+.award-slide {
+    padding: 0 10px;
 }
 
 .award-card {
-    flex: 0 0 280px;
     background-color: #2a2a2a;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    scroll-snap-align: start;
+    margin: 0 auto;
 }
 
 .award-image {
@@ -72,30 +52,4 @@
     margin: 0;
     font-size: 0.9rem;
     color: var(--secondary-color);
-}
-
-@media (max-width: 768px) {
-    .awards-container {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 20px;
-        padding-bottom: 0;
-        /* Hide scrollbar for a cleaner look */
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-    }
-
-    .awards-container::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, and Opera */
-    }
-
-    .award-card {
-        flex: 0 0 90%; /* Show one card and a peek of the next */
-        scroll-snap-align: center;
-    }
-    .awards-container {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
 }

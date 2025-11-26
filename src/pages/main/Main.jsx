@@ -2,12 +2,11 @@ import React from 'react';
 import Slider from 'react-slick';
 import SCount from '@/pages/main/section/S_Count';
 import S_About from '@/pages/main/section/S_About';
-import ProfileAwards from '@/pages/main/section/S_Awards';
+import S_Awards from '@/pages/main/section/S_Awards';
 import introImage0 from '@/assets/intro/introImage_0.png';
 import introImage1 from '@/assets/intro/introImage_1.png';
 import introImage2 from '@/assets/intro/introImage_2.png';
-import Discography from '@/pages/main/section/S_Discography';
-import SocialMedia from '@/pages/main/section/S_SocialMedia';
+import S_SocialMedia from '@/pages/main/section/S_SocialMedia';
 
 import '../main/Main.css';
 import 'slick-carousel/slick/slick.css';
@@ -62,14 +61,9 @@ const Main = () => {
         </main>
       </div>
       <main className="profile-main profile-main-continued">
+        <S_Awards />
         <div className="section-container">
-          <Discography />
-        </div>
-
-        <ProfileAwards />
-
-        <div className="section-container">
-          <SocialMedia />
+          <S_SocialMedia />
         </div>
       </main>
 

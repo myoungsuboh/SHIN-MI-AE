@@ -11,10 +11,9 @@ const socials = {
   instagram: 'https://www.instagram.com/mwesin/',
 };
 
-const SocialMedia = () => {
+const S_SocialMedia = () => {
   return (
     <section className="profile-socials">
-      <h2>Follow My Journey</h2>
       <div className="social-links-container">
         {socials.youtube && (
           <a
@@ -27,7 +26,6 @@ const SocialMedia = () => {
               src={youtubeIcon}
               alt="YouTube"
               className="social-icon-image"
-              style={{ width: '50px', height: '50px', marginBottom: '10px' }}
             />
           </a>
         )}
@@ -42,7 +40,6 @@ const SocialMedia = () => {
               src={instagramIcon}
               alt="Instagram"
               className="social-icon-image"
-              style={{ width: '50px', height: '50px', marginBottom: '10px' }}
             />
           </a>
         )}
@@ -51,4 +48,4 @@ const SocialMedia = () => {
   );
 };
 
-export default SocialMedia;
+export default S_SocialMedia;

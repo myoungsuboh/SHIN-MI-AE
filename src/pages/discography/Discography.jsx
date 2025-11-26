@@ -1,18 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
-import useWindowSize from '@/hooks/useWindowSize';
+import miniAlbumCover from '@/assets/album/mini-album.png';
 
-import './S_Discography.css';
+import './Discography.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const albums = [
   {
     seq: 0,
-    title: 'Starlight Serenade',
-    year: '2025',
-    cover:
-      'https://images.unsplash.com/photo-1506443432602-ac2fcd6f54e0?q=80&w=1974&auto=format&fit=crop',
+    title: '콩닭콩닭',
+    year: '2017.07.25',
+    cover: miniAlbumCover,
+    tracks: [
+      {
+        name: '1. 콩닭콩닭',
+        url: 'https://music.bugs.co.kr/album/20109777?wl_ref=list_ab_01_ab',
+      },
+    ],
   },
   {
     seq: 1,
@@ -20,6 +25,13 @@ const albums = [
     year: '2024',
     cover:
       'https://images.unsplash.com/photo-1506443432602-ac2fcd6f54e0?q=80&w=1974&auto=format&fit=crop',
+    tracks: [
+      { name: '1. Moonbeam Melody', url: '#' },
+      { name: '2. Cosmic Dust', url: '#' },
+      { name: '3. Echoes of the Void', url: '#' },
+      { name: '4. Stellar Bloom', url: '#' },
+      { name: '5. Galactic Whisper', url: '#' },
+    ],
   },
   {
     seq: 2,
@@ -27,6 +39,13 @@ const albums = [
     year: '2023',
     cover:
       'https://images.unsplash.com/photo-1506443432602-ac2fcd6f54e0?q=80&w=1974&auto=format&fit=crop',
+    tracks: [
+      { name: "1. Nebula's Dance", url: '#' },
+      { name: '2. Quantum Leap', url: '#' },
+      { name: '3. Celestial Drift', url: '#' },
+      { name: '4. Astral Echoes', url: '#' },
+      { name: '5. Infinite Horizon', url: '#' },
+    ],
   },
   {
     seq: 3,
@@ -34,6 +53,13 @@ const albums = [
     year: '2022',
     cover:
       'https://images.unsplash.com/photo-1506443432602-ac2fcd6f54e0?q=80&w=1974&auto=format&fit=crop',
+    tracks: [
+      { name: '1. Whispering Winds', url: '#' },
+      { name: '2. Silent Stars', url: '#' },
+      { name: '3. Fading Light', url: '#' },
+      { name: '4. Dreamscape', url: '#' },
+      { name: '5. Eternal Slumber', url: '#' },
+    ],
   },
   {
     seq: 4,
@@ -41,6 +67,13 @@ const albums = [
     year: '2021',
     cover:
       'https://images.unsplash.com/photo-1506443432602-ac2fcd6f54e0?q=80&w=1974&auto=format&fit=crop',
+    tracks: [
+      { name: '1. Pulsar Beat', url: '#' },
+      { name: '2. Solar Flare', url: '#' },
+      { name: "3. Andromeda's Song", url: '#' },
+      { name: '4. Milky Way Groove', url: '#' },
+      { name: '5. Cosmic Symphony', url: '#' },
+    ],
   },
   {
     seq: 5,
@@ -48,83 +81,32 @@ const albums = [
     year: '2020',
     cover:
       'https://images.unsplash.com/photo-1506443432602-ac2fcd6f54e0?q=80&w=1974&auto=format&fit=crop',
+    tracks: [
+      { name: '1. Ancient Paths', url: '#' },
+      { name: "2. Spirit's Flight", url: '#' },
+      { name: '3. Sacred Grove', url: '#' },
+      { name: '4. Timeless River', url: '#' },
+      { name: "5. Soul's Ascent", url: '#' },
+    ],
   },
 ];
 
-const sampleTracks = {
-  'Starlight Serenade': [
-    '1. Starlight Prelude',
-    '2. Galactic Tides',
-    "3. Nebula's Embrace",
-    '4. Supernova Heart',
-    '5. Echoes of Infinity',
-  ],
-  'Lunar Lullaby': [
-    '1. Moonbeam Melody',
-    '2. Cosmic Dust',
-    '3. Echoes of the Void',
-    '4. Stellar Bloom',
-    '5. Galactic Whisper',
-  ],
-  'Cosmic Rhapsody': [
-    "1. Nebula's Dance",
-    '2. Quantum Leap',
-    '3. Celestial Drift',
-    '4. Astral Echoes',
-    '5. Infinite Horizon',
-  ],
-  'Dream Weaver': [
-    '1. Whispering Winds',
-    '2. Silent Stars',
-    '3. Fading Light',
-    '4. Dreamscape',
-    '5. Eternal Slumber',
-  ],
-  'Galactic Harmonies': [
-    '1. Pulsar Beat',
-    '2. Solar Flare',
-    "3. Andromeda's Song",
-    '4. Milky Way Groove',
-    '5. Cosmic Symphony',
-  ],
-  'Ethereal Journey': [
-    '1. Ancient Paths',
-    "2. Spirit's Flight",
-    '3. Sacred Grove',
-    '4. Timeless River',
-    "5. Soul's Ascent",
-  ],
-};
-
 const Discography = () => {
-  const { width } = useWindowSize();
-
-  const getCenterPadding = () => {
-    if (width <= 768) {
-      return '10px';
-    }
-    if (width <= 1024) {
-      return '80px';
-    }
-    return '150px';
-  };
-
   const settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    centerMode: true,
-    centerPadding: getCenterPadding(),
-    arrows: width > 768,
+    fade: true,
+    cssEase: 'linear',
+    arrows: true,
   };
 
   return (
     <section className="profile-albums">
-      <h2>Discography</h2>
       <div className="timeline-slider-wrapper">
-        <Slider key={width} {...settings}>
+        <Slider {...settings}>
           {albums.map((album) => (
             <div key={album.seq} className="discography-slide">
               <div className="discography-card">
@@ -141,8 +123,16 @@ const Discography = () => {
                     <p>{album.year}</p>
                   </div>
                   <ul className="discography-card-track-list">
-                    {sampleTracks[album.title]?.map((track, trackIndex) => (
-                      <li key={trackIndex}>{track}</li>
+                    {album.tracks?.map((track, trackIndex) => (
+                      <li key={trackIndex}>
+                        <a
+                          href={track.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {track.name}
+                        </a>
+                      </li>
                     ))}
                   </ul>
                 </div>

@@ -1,14 +1,16 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import './App.css';
-import 'antd/dist/reset.css';
+import Header from '@/Header';
 import Main from '@/pages/main/Main';
 import Intro from '@/pages/title/Intro';
-import ProfileAwards from '@/pages/awards/ProfileAwards';
 import Gallery from '@/pages/gallery/Gallery';
-import Header from '@/Header';
+import ProfileAwards from '@/pages/awards/ProfileAwards';
+import Discography from '@/pages/discography/Discography';
 
-// 헤더를 포함하는 레이아웃 컴포넌트
+import { Routes, Route } from 'react-router-dom';
+
+import './App.css';
+import 'antd/dist/reset.css';
+
 const LayoutWithHeader = ({ children }) => {
   return (
     <>
@@ -36,6 +38,14 @@ function App() {
           element={
             <LayoutWithHeader>
               <ProfileAwards />
+            </LayoutWithHeader>
+          }
+        />
+        <Route
+          path="/discography"
+          element={
+            <LayoutWithHeader>
+              <Discography />
             </LayoutWithHeader>
           }
         />

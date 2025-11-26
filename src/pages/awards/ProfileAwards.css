@@ -1,88 +1,123 @@
-.award-detail-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 40px 20px;
-  background-color: var(--background-color);
+.timeline-slider-wrapper {
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
-.award-detail-content {
-  max-width: 800px;
+.discography-slide {
+  padding: 0 15px;
+}
+
+.discography-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-left: 4px solid var(--accent-color);
+  transition: transform 0.3s ease;
+}
+
+.discography-image-wrapper {
+  position: relative;
+}
+
+.discography-card-image {
   width: 100%;
-  background: var(--card-background);
-  border-radius: 12px;
-  padding: 40px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
-.award-detail-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
-  padding-bottom: 30px;
+.discography-card-info {
+  padding: 20px;
+}
+
+.discography-card-header {
+  margin-bottom: 20px;
+}
+
+.discography-card-header h4 {
+  font-family: 'Playfair Display', serif;
+  color: var(--accent-color);
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.discography-card-header p {
+  color: var(--secondary-color);
+  font-size: 1rem;
+  margin-top: 8px;
+}
+
+.discography-card-track-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+
+.discography-card-track-list li {
+  padding: 5px 0;
   border-bottom: 1px solid #333;
 }
 
-.award-detail-image {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-right: 30px;
-  flex-shrink: 0;
+.discography-card-track-list li:last-child {
+  border-bottom: none;
 }
 
-.award-detail-title-group h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.8rem;
+.timeline-slider-wrapper .slick-dots {
+  bottom: -30px;
+}
+
+.timeline-slider-wrapper .slick-dots li button:before {
+  font-size: 12px;
+  color: var(--secondary-color);
+  opacity: 0.5;
+}
+
+.timeline-slider-wrapper .slick-dots li.slick-active button:before {
   color: var(--accent-color);
-  margin: 0;
+  opacity: 1;
 }
 
-.award-detail-title-group .award-detail-meta {
-  font-size: 1.1rem;
-  color: var(--secondary-color);
-  margin-top: 10px;
+.timeline-slider-wrapper .slick-prev,
+.timeline-slider-wrapper .slick-next {
+  width: 50px;
+  height: 50px;
+  z-index: 10;
 }
 
-.award-detail-description {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--secondary-color);
-  margin: 0;
+.timeline-slider-wrapper .slick-prev:before,
+.timeline-slider-wrapper .slick-next:before {
+  font-size: 40px;
+  color: var(--accent-color);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
 }
 
-.award-detail-footer {
-  text-align: center;
-  margin-top: 40px;
+.timeline-slider-wrapper .slick-prev:hover:before,
+.timeline-slider-wrapper .slick-next:hover:before {
+  opacity: 1;
 }
 
-.back-to-main-btn {
-  display: inline-block;
-  padding: 10px 25px;
-  background-color: var(--accent-color);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  font-weight: bold;
+.timeline-slider-wrapper .slick-prev {
+  left: -60px;
 }
 
-.back-to-main-btn:hover {
-  background-color: #c89c6c;
+.timeline-slider-wrapper .slick-next {
+  right: -60px;
 }
 
-@media (max-width: 600px) {
-  .award-detail-header {
-    flex-direction: column;
-    text-align: center;
+
+@media (min-width: 769px) {
+  .timeline-slider-wrapper .slick-slide {
+    transform: scale(0.8); 
+    transition: transform 0.4s ease;
   }
-  .award-detail-image {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-  .award-detail-title-group h1 {
-    font-size: 2.2rem;
+
+  .timeline-slider-wrapper .slick-center {
+    transform: scale(1); 
   }
 }

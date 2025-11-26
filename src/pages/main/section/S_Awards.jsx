@@ -1,8 +1,11 @@
 import React from 'react';
+import Slider from 'react-slick';
+import useWindowSize from '@/hooks/useWindowSize';
 import greatBirth from '@/assets/award/greatBirth.png';
-import { useNavigate } from 'react-router-dom';
 
 import './S_Awards.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const awards = [
   {
@@ -48,11 +51,26 @@ const awards = [
   },
 ];
 
-const ProfileAwards = () => {
-  const navigate = useNavigate();
+const S_Awards = () => {
+  const { width } = useWindowSize();
 
-  const handleCardClick = (id) => {
-    navigate(`/awards/${id}`);
+  const getSlidesToShow = () => {
+    if (width <= 768) {
+      return 1;
+    }
+    if (width <= 1024) {
+      return 2;
+    }
+    return 3;
+  };
+
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: getSlidesToShow(),
+    slidesToScroll: 1,
+    arrows: width > 768,
   };
 
   return (
@@ -62,31 +80,29 @@ const ProfileAwards = () => {
       </div>
       <main className="awards-main-content">
         <div className="awards-slider">
-          <div className="awards-container">
+          <Slider key={width} {...settings}>
             {awards.map((award, idx) => (
-              <div
-                key={idx}
-                className="award-card"
-                onClick={() => handleCardClick(idx)}
-              >
-                <img
-                  src={award.image}
-                  alt={award.title}
-                  className="award-image"
-                />
-                <div className="award-info">
-                  <h4>{award.title}</h4>
-                  <p>
-                    {award.ceremony} - {award.year}
-                  </p>
+              <div key={idx} className="award-slide">
+                <div className="award-card">
+                  <img
+                    src={award.image}
+                    alt={award.title}
+                    className="award-image"
+                  />
+                  <div className="award-info">
+                    <h4>{award.title}</h4>
+                    <p>
+                      {award.ceremony} - {award.year}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
-          </div>
+          </Slider>
         </div>
       </main>
     </div>
   );
 };
 
-export default ProfileAwards;
+export default S_Awards;

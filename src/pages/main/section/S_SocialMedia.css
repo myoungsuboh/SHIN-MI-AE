@@ -1,50 +1,65 @@
 .profile-socials {
-    background: var(--card-background);
-    padding: 30px;
-    border-radius: 12px;
-    margin-bottom: 40px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-    text-align: center;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 80px; /* Awards ì„¹ì…˜ê³¼ì˜ ê°„ê²©ì„ í™•ë³´ */
 }
 
 .profile-socials h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    margin-top: 0;
-    margin-bottom: 25px;
-    border-bottom: 2px solid var(--accent-color);
-    display: inline-block;
-    padding-bottom: 10px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  font-family: 'GmarketSans', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #e0e0e0;
+  letter-spacing: 1px;
 }
 
 .social-links-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
 }
 
 .social-link {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    color: var(--primary-color);
-    background-color: #2a2a2a;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    width: 150px;
-    height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border: 2px solid #444;
+  border-radius: 50%;
+  transition: all 0.3s ease;
 }
+
 .social-link:hover {
-    transform: translateY(-3px);
-    background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .social-icon-image {
-    border-radius: 8px; /* ºÎ¸ğ social-link¿Í µ¿ÀÏÇÏ°Ô 8px·Î µÕ±Û°Ô */
-    object-fit: cover; /* ÀÌ¹ÌÁö°¡ Àß¸®Áö ¾Ê°í ¿µ¿ªÀ» Ã¤¿ìµµ·Ï */
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover .social-icon-image {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* ë°˜ì‘í˜• ìŠ¤íƒ€ì¼ */
+@media (max-width: 768px) {
+  .profile-socials h2 {
+    font-size: 2rem;
+  }
+
+  .social-link {
+    width: 70px;
+    height: 70px;
+  }
+
+  .social-icon-image {
+    width: 40px;
+    height: 40px;
+  }
 }
