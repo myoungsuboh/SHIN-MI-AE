@@ -30,7 +30,7 @@ const albums = [
       { name: '2. Cosmic Dust', url: '#' },
       { name: '3. Echoes of the Void', url: '#' },
     ],
-  }
+  },
 ];
 
 const Discography = () => {
