@@ -1,14 +1,24 @@
+.language-select {
+    width: 110px;
+    background: rgb(171, 171, 171) !important;
+    border-radius: 5px !important;
+    border: 1px solid #555 !important;
+}
+
+.language-select .ant-select-selector {
+    background: transparent !important;
+    color: white !important;
+    text-align: center !important;
+}
+
+.language-select .ant-select-arrow {
+    display: none !important;
+}
+
 .main-intro-header {
     height: 100vh;
     position: relative;
-    display: flex;
-    align-items: flex-start; /* ¼öÁ÷ Á¤·ÄÀ» »ó´ÜÀ¸·Î º¯°æ */
-    justify-content: center;
-    text-align: center;
-    color: var(--primary-color);
     overflow: hidden;
-    padding-top: 15vh; /* »ó´Ü ¿©¹é Ãß°¡ */
-    box-sizing: border-box; /* ÆĞµùÀÌ ³ôÀÌ¿¡ Æ÷ÇÔµÇµµ·Ï ¼³Á¤ */
 }
 
 .main-intro-slider {
@@ -32,50 +42,78 @@
 }
 
 .main-intro-overlay {
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
     z-index: 2;
-    border-radius: 15px;    
+    width: 35%;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* ì½˜í…ì¸ ë¥¼ ìƒë‹¨ê³¼ í•˜ë‹¨ìœ¼ë¡œ ë¶„ë¦¬ */
+    padding: 15vh 5vw; /* ìƒí•˜ íŒ¨ë”©ì„ ì¶”ê°€í•˜ì—¬ ì½˜í…ì¸ ê°€ ê°€ì¥ìë¦¬ì— ë¶™ì§€ ì•Šë„ë¡ í•¨ */
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.5); /* ë°˜íˆ¬ëª… ë°°ê²½ìƒ‰ ì¶”ê°€ */
+    text-align: left; /* ë‚´ë¶€ í…ìŠ¤íŠ¸ ê¸°ë³¸ ì™¼ìª½ ì •ë ¬ */
 }
 
 .main-intro-overlay h1 {
     font-family: 'Playfair Display', serif;
     font-size: 6rem;
+    font-size: 4.5rem;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
     margin: 0;
     letter-spacing: 3px;
+    color: #ffffff; /* í°íŠ¸ ìƒ‰ìƒì„ í°ìƒ‰ìœ¼ë¡œ ì§€ì • */
 }
 
 .main-intro-overlay p {
     font-size: 1.5rem;
+    font-size: 1.3rem;
     margin: 15px 0 30px;
     color: var(--secondary-color);
+    color: rgba(255, 255, 255, 0.85); /* í°ìƒ‰ì— íˆ¬ëª…ë„ë¥¼ ì£¼ì–´ ë¶€ë“œëŸ¬ìš´ ëŠë‚Œì„ ì¤ë‹ˆë‹¤. */
 }
 
-.main-intro-overlay button {
-    background-color: transparent; /* ¹è°æÀ» Åõ¸íÇÏ°Ô º¯°æ */
-    color: var(--accent-color); /* ÅØ½ºÆ® »ö»óÀ» °­Á¶ »ö»óÀ¸·Î º¯°æ */
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* ¸ğµç °ü·Ã ¼Ó¼º ÀüÈ¯ È¿°ú Ãß°¡ */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+/* antd Button ì»¤ìŠ¤í…€ ìŠ¤íƒ€ì¼ */
+.main-intro-overlay .intro-button {
+    height: auto; /* antd ê¸°ë³¸ ë†’ì´ê°’ ì´ˆê¸°í™” */
+    padding: 12px 30px; /* íŒ¨ë”© ì¡°ì • */
+    font-size: 1.2rem; /* í°íŠ¸ í¬ê¸° */
+    font-weight: 700; /* í°íŠ¸ ë‘ê»˜ */
+    border-radius: 50px; /* ë‘¥ê·¼ ëª¨ì„œë¦¬ */
+    border-width: 2px; /* í…Œë‘ë¦¬ ë‘ê»˜ */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* ê·¸ë¦¼ì íš¨ê³¼ */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* í…ìŠ¤íŠ¸ ê·¸ë¦¼ì */
+    color: #d4af37 !important; /* í…ìŠ¤íŠ¸ ìƒ‰ìƒ */
+    border-color: #d4af37 !important; /* í…Œë‘ë¦¬ ìƒ‰ìƒ */
 }
 
-.main-intro-overlay button:hover {
+.main-intro-overlay .intro-button:hover {
     transform: scale(1.05);
-    background-color: var(--accent-color); /* È£¹ö ½Ã ¹è°æ»ö Ã¤¿ì±â */
-    color: var(--background-color); /* È£¹ö ½Ã ÅØ½ºÆ® »ö»óÀ» ¾îµÓ°Ô º¯°æÇÏ¿© ´ëºñ È¿°ú */ 
-    border-color: var(--accent-color); /* È£¹ö ½Ã Å×µÎ¸® »ö»óµµ ¹è°æ»ö°ú µ¿ÀÏÇÏ°Ô */
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.8), 0 0 30px rgba(212, 175, 55, 0.5); /* ¿µ·ÕÇÑ °ñµå ±×¸²ÀÚ È¿°ú */
+    color: #000 !important;
+    background-color: #d4af37 !important;
+    border-color: #d4af37 !important;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.8), 0 0 30px rgba(212, 175, 55, 0.5);
 }
 
 @media (max-width: 768px) {
     .main-intro-overlay h1 {
-        font-size: 4rem;
+        font-size: 2.7rem; 
     }
     .main-intro-overlay p {
-        font-size: 1.2rem;
+        font-size: 1rem;
+    }
+    .main-intro-overlay .intro-button {
+        font-size: 1rem;
+        padding: 10px 24px;
+    }
+    .main-intro-overlay {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        gap: 50vh;
+        padding: 0 8vw;
     }
 }

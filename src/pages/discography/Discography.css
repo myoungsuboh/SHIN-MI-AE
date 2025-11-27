@@ -32,6 +32,8 @@
   display: flex !important;
   align-items: center;
   justify-content: center;
+  margin-top: 130px; /* 슬라이드 상단에 패딩 추가 */
+  box-sizing: border-box; /* 패딩이 높이에 포함되도록 설정 */
 }
 
 .discography-card {
@@ -107,8 +109,17 @@
 }
 
 .timeline-slider-wrapper .slick-dots {
-  bottom: 0;
-  bottom: 20px;
+  position: absolute;
+  top: 50%;
+  right: 30px; 
+  transform: translateY(-50%); 
+  bottom: auto; 
+  width: auto; 
+  padding: 0;
+}
+
+.timeline-slider-wrapper .slick-dots li {
+  display: block; 
 }
 
 .timeline-slider-wrapper .slick-dots li button::before {

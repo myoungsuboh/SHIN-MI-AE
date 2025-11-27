@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
+import { Button, Select } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import './Intro.css';
 
+import './Intro.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -15,9 +16,11 @@ const sliderImages = [introImage0, introImage1, introImage2];
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
-  
-  const changeLanguage = (e) => {
-    i18n.changeLanguage(e.target.value);
+  const [open, setOpen] = useState(false);
+
+  const changeLanguage = (value) => {
+    i18n.changeLanguage(value);
+    setOpen(false);
   };
 
   return (
@@ -30,23 +33,21 @@ const LanguageSwitcher = () => {
         zIndex: 10,
       }}
     >
-      <select
+      <Select
         value={i18n.language}
         onChange={changeLanguage}
-        style={{
-          background: 'rgba(0,0,0,0.5)',
-          color: 'white',
-          padding: '8px',
-          borderRadius: '5px',
-          border: '1px solid #555',
-        }}
+        className="language-select"
+        dropdownStyle={{ textAlign: 'center' }} 
+        bordered={false}
+        open={open}
+        onDropdownVisibleChange={(visible) => setOpen(visible)}
       >
-        <option value="ko">한국어</option>
-        <option value="en">English</option>
-        <option value="ja">日本語</option>
-        <option value="uz">Oʻzbekcha</option>
-        <option value="ru">Русский</option>
-      </select>
+        <Select.Option value="ko">한국어</Select.Option>
+        <Select.Option value="en">English</Select.Option>
+        <Select.Option value="ja">日本語</Select.Option>
+        <Select.Option value="uz">Oʻzbekcha</Select.Option>
+        <Select.Option value="ru">Русский</Select.Option>
+      </Select>
     </div>
   );
 };
@@ -85,9 +86,13 @@ const MainTitle = () => {
         ))}
       </Slider>
       <div className="main-intro-overlay">
-        <h1>SHIN MI AE</h1>
-        <p>Experience the passion in her music</p>
-        <button onClick={handleExploreClick}>Explore Her World</button>
+        <div className="intro-text-content">
+          <h1>SHIN MI AE</h1>
+          <p>Experience the passion in her music</p>
+        </div>
+        <Button onClick={handleExploreClick} className="intro-button" ghost>
+          DIVE IN
+        </Button>
       </div>
     </header>
   );

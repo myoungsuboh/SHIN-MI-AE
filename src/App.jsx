@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { FloatButton } from 'antd';
 import { ArrowUpOutlined } from '@ant-design/icons';
 import Header from '@/Header';
-import Main from '@/pages/main/Main';
-import Intro from '@/pages/title/Intro';
-import Gallery from '@/pages/gallery/Gallery';
-import Lectures from '@/pages/lectures/Lectures';
-import ProfileAwards from '@/pages/awards/ProfileAwards';
-import Discography from '@/pages/discography/Discography';
+
+const Main = lazy(() => import('@/pages/main/Main'));
+const Intro = lazy(() => import('@/pages/title/Intro'));
+const Gallery = lazy(() => import('@/pages/gallery/Gallery'));
+const Lectures = lazy(() => import('@/pages/lectures/Lectures'));
+const ProfileAwards = lazy(() => import('@/pages/awards/ProfileAwards'));
+const Discography = lazy(() => import('@/pages/discography/Discography'));
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -19,10 +20,7 @@ const LayoutWithHeader = ({ children }) => {
     <>
       <Header />
       <div className="page-content">{children}</div>
-      <FloatButton.BackTop
-        icon={<ArrowUpOutlined />}
-        style={{ bottom: 100 }}
-      />
+      <FloatButton.BackTop icon={<ArrowUpOutlined />} style={{ bottom: 100 }} />
     </>
   );
 };
@@ -30,50 +28,52 @@ const LayoutWithHeader = ({ children }) => {
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Intro />} />
-        <Route
-          path="/main"
-          element={
-            <LayoutWithHeader>
-              <Main />
-            </LayoutWithHeader>
-          }
-        />
-        <Route
-          path="/awards/:id"
-          element={
-            <LayoutWithHeader>
-              <ProfileAwards />
-            </LayoutWithHeader>
-          }
-        />
-        <Route
-          path="/lectures"
-          element={
-            <LayoutWithHeader>
-              <Lectures />
-            </LayoutWithHeader>
-          }
-        />
-        <Route
-          path="/discography"
-          element={
-            <LayoutWithHeader>
-              <Discography />
-            </LayoutWithHeader>
-          }
-        />
-        <Route
-          path="/gallery"
-          element={
-            <LayoutWithHeader>
-              <Gallery />
-            </LayoutWithHeader>
-          }
-        />
-        <Route path="*" element={<Intro />} />
-      </Routes>
+      <Suspense fallback={<div>.....Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<Intro />} />
+          <Route
+            path="/main"
+            element={
+              <LayoutWithHeader>
+                <Main />
+              </LayoutWithHeader>
+            }
+          />
+          <Route
+            path="/awards/:id"
+            element={
+              <LayoutWithHeader>
+                <ProfileAwards />
+              </LayoutWithHeader>
+            }
+          />
+          <Route
+            path="/lectures"
+            element={
+              <LayoutWithHeader>
+                <Lectures />
+              </LayoutWithHeader>
+            }
+          />
+          <Route
+            path="/discography"
+            element={
+              <LayoutWithHeader>
+                <Discography />
+              </LayoutWithHeader>
+            }
+          />
+          <Route
+            path="/gallery"
+            element={
+              <LayoutWithHeader>
+                <Gallery />
+              </LayoutWithHeader>
+            }
+          />
+          <Route path="*" element={<Intro />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 }
