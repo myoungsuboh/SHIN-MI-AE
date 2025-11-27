@@ -211,19 +211,15 @@ body {
 }
 
 .profile-footer {
-    padding: 20px;
-    color: var(--secondary-color);
-    font-size: 0.9rem;
-}
-
-.footer-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 20px;
+  color: var(--secondary-color);
+    font-size: 0.9rem;
 }
 
 .footer-copyright {
@@ -286,9 +282,6 @@ body {
     .profile-footer {
         padding-top: 40px;
         padding-bottom: 40px;
-    }
-
-    .footer-content {
         flex-direction: column;
         gap: 20px;
     }

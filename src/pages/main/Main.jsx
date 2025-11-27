@@ -73,34 +73,32 @@ const Main = () => {
       </main>
 
       <footer className="profile-footer">
-        <div className="footer-content">
-          <p className="footer-copyright">
-            {t('footer', {
-              year: new Date().getFullYear(),
-              artistName: t('artistName'),
-            })}
-          </p>
-          <div className="footer-socials">
-            <a
-              href={socials.youtube}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Youtube"
-            >
-              <YoutubeOutlined />
-            </a>
-            <a
-              href={socials.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <InstagramOutlined />
-            </a>
-            <a href="tel:YOUR_PHONE_NUMBER" aria-label="Phone">
-              <PhoneOutlined />
-            </a>
-          </div>
+        <p className="footer-copyright">
+          {t('footer', {
+            year: new Date().getFullYear(),
+            artistName: t('artistName'),
+          })}
+        </p>
+        <div className="footer-socials">
+          <a
+            href={socials.youtube}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Youtube"
+          >
+            <YoutubeOutlined />
+          </a>
+          <a
+            href={socials.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <InstagramOutlined />
+          </a>
+          <a href="tel:010-8840-6217" aria-label="Phone">
+            <PhoneOutlined />
+          </a>
         </div>
       </footer>
     </div>

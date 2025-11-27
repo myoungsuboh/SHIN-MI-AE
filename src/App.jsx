@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useState, useEffect } from 'react';
 import { FloatButton } from 'antd';
 import { ArrowUpOutlined } from '@ant-design/icons';
 import Header from '@/Header';
@@ -16,11 +16,28 @@ import './App.css';
 import 'antd/dist/reset.css';
 
 const LayoutWithHeader = ({ children }) => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <>
       <Header />
       <div className="page-content">{children}</div>
-      <FloatButton.BackTop icon={<ArrowUpOutlined />} style={{ bottom: 100 }} />
+      <FloatButton.BackTop
+        icon={<ArrowUpOutlined />}
+        style={{ bottom: isMobile ? 30 : 85 }}
+      />
     </>
   );
 };
